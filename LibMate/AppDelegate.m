@@ -14,6 +14,9 @@
 {
     // Override point for customization after application launch.
     
+    _multipeerManager = [[MultipeerManager alloc] init];
+    _userInformation = [[UserInformation alloc] init];
+    
     return YES;
 }
 							

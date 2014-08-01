@@ -11,6 +11,9 @@
 @interface UserInformation : NSObject
 
 @property (strong, nonatomic) NSString *userName;
-@property (strong, nonatomic) NSArray *myStatus;
+@property (strong, nonatomic) UIImage *userAvatar;
+@property (strong, nonatomic) NSMutableArray *status;
+
+- (id) initWithUserName:(NSString *)userName avatar:(UIImage *)userAvatar status:(NSMutableArray *)status;
 
 @end

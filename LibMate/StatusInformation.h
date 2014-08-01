@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StatusInformation : NSObject
+@interface StatusInformation : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) UIImage *icon;
+@property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) NSString *description;
-@property (strong, nonatomic) NSArray *hashTags;
+@property (strong, nonatomic) NSMutableArray *hashTags;
+
+- (id) initWithAuthor:(NSString *)author image:(UIImage *)image description:(NSString *)description hashTags:(NSMutableArray *)hashTags;
 
 @end

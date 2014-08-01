@@ -10,4 +10,41 @@
 
 @implementation StatusInformation
 
+- (id)init {
+	if (self = [super init]) {
+		_author = nil;
+		_image = nil;
+		_description = nil;
+		_hashTags = [[NSMutableArray alloc] init];
+	}
+	return self;
+}
+
+- (id)initWithAuthor:(NSString *)author image:(UIImage *)image description:(NSString *)description hashTags:(NSMutableArray *)hashTags {
+	if (self = [super init]) {
+		_author = author;
+		_image = image;
+		_description = description;
+		_hashTags = hashTags;
+	}
+	return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	if (self = [super init]) {
+		_author = [aDecoder decodeObjectForKey:@"author"];
+		_image = [aDecoder decodeObjectForKey:@"image"];
+		_description = [aDecoder decodeObjectForKey:@"description"];
+		_hashTags = [aDecoder decodeObjectForKey:@"hashTags"];
+	}
+	return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeObject:self.author forKey:@"author"];
+	[aCoder encodeObject:self.image forKey:@"image"];
+	[aCoder encodeObject:self.description forKey:@"description"];
+	[aCoder encodeObject:self.hashTags forKey:@"hashTags"];
+}
+
 @end
