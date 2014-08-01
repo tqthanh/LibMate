@@ -11,6 +11,8 @@
 @interface StatusInformation : NSObject
 
 @property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) UIImage *icon;
+@property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSArray *hashTags;
 
 @end

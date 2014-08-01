@@ -11,5 +11,6 @@
 @interface UserInformation : NSObject
 
 @property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSArray *myStatus;
 
 @end
