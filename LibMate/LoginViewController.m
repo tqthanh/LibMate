@@ -20,7 +20,7 @@
 
 	// Do any additional setup after loading the view, typically from a nib.
 
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
