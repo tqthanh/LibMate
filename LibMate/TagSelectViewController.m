@@ -13,6 +13,7 @@
 @end
 
 @implementation TagSelectViewController
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   // UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:self];
+    self.TagPicker.delegate = self;
+    self.TagPicker.dataSource = self;
     // Do any additional setup after loading the view.
+    self.tagArray  = [[NSArray alloc]         initWithObjects:@"Math",@"Physic",@"Chemistry",@"Programming",@"Ios",@"C++" , nil];
+    //self.Description.delegate = self;
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xd35400)];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +47,47 @@
     [self.Description resignFirstResponder];
 }
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
+{
+    return 5;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+{
+     return [self.tagArray objectAtIndex:row];
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    NSLog(@"Selected Row %d", row);
+    switch(row)
+    {
+            
+        case 0:
+            self.tag = @"Math";
+            break;
+        case 1:
+            self.tag = @"Physic";
+            break;
+        case 2:
+            self.tag = @"Chemistry";
+            break;
+        case 3:
+            self.tag = @"Programming";
+            break;
+        case 4:
+            self.tag = @"Ios";
+            break;
+        case 5:
+            self.tag = @"C++";
+            break;
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -49,5 +98,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView{
+    [textView resignFirstResponder];
+    return YES;
+}
 
+
+- (IBAction)UpdateStatus:(id)sender {
+    self.description = self.Description.text;
+    
+}
 @end
