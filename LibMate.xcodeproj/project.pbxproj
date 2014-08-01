@@ -29,6 +29,7 @@
 		D5D7AB83198B8E7000F25819 /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB82198B8E7000F25819 /* MainTabBar.m */; };
 		D5D7AB86198B94C500F25819 /* login_button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AB85198B94C500F25819 /* login_button.jpg */; };
 		D5D7AB88198BA18E00F25819 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AB87198BA18E00F25819 /* background.jpg */; };
+		D5D7AB8D198BA86600F25819 /* next_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AB8C198BA86600F25819 /* next_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D5D7AB82198B8E7000F25819 /* MainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBar.m; sourceTree = "<group>"; };
 		D5D7AB85198B94C500F25819 /* login_button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_button.jpg; sourceTree = "<group>"; };
 		D5D7AB87198BA18E00F25819 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		D5D7AB8C198BA86600F25819 /* next_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D5D7AB87198BA18E00F25819 /* background.jpg */,
+				D5D7AB8C198BA86600F25819 /* next_button.png */,
 				D5D7AB85198B94C500F25819 /* login_button.jpg */,
 			);
 			name = Resources;
@@ -289,6 +292,7 @@
 			files = (
 				D58A50F5198B5B1600A5A180 /* Images.xcassets in Resources */,
 				D5D7AB88198BA18E00F25819 /* background.jpg in Resources */,
+				D5D7AB8D198BA86600F25819 /* next_button.png in Resources */,
 				D58A50E7198B5B1600A5A180 /* InfoPlist.strings in Resources */,
 				D58A50F0198B5B1600A5A180 /* Main.storyboard in Resources */,
 				D5D7AB86198B94C500F25819 /* login_button.jpg in Resources */,
