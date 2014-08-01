@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainTabBar.h
 //  LibMate
 //
 //  Created by TQThanh on 8/1/14.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *UserNameText;
+@interface MainTabBar : UITabBarController
 
 @end
