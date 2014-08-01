@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763B83D3198B669900F61FEC /* UserInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D2198B669900F61FEC /* UserInformation.m */; };
+		763B83D7198B673000F61FEC /* StatusInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D6198B673000F61FEC /* StatusInformation.m */; };
 		D58A50DD198B5B1600A5A180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50DC198B5B1600A5A180 /* Foundation.framework */; };
 		D58A50DF198B5B1600A5A180 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */; };
 		D58A50E1198B5B1600A5A180 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50E0198B5B1600A5A180 /* UIKit.framework */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		763B83D1198B669900F61FEC /* UserInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformation.h; sourceTree = "<group>"; };
+		763B83D2198B669900F61FEC /* UserInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformation.m; sourceTree = "<group>"; };
+		763B83D5198B673000F61FEC /* StatusInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusInformation.h; sourceTree = "<group>"; };
+		763B83D6198B673000F61FEC /* StatusInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusInformation.m; sourceTree = "<group>"; };
 		D58A50D9198B5B1600A5A180 /* LibMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A50DC198B5B1600A5A180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +85,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		763B83D0198B667400F61FEC /* References */ = {
+			isa = PBXGroup;
+			children = (
+				763B83D1198B669900F61FEC /* UserInformation.h */,
+				763B83D2198B669900F61FEC /* UserInformation.m */,
+				763B83D5198B673000F61FEC /* StatusInformation.h */,
+				763B83D6198B673000F61FEC /* StatusInformation.m */,
+			);
+			name = References;
+			sourceTree = "<group>";
+		};
+		763B83D4198B66AA00F61FEC /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				D58A50F1198B5B1600A5A180 /* ViewController.h */,
+				D58A50F2198B5B1600A5A180 /* ViewController.m */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
 		D58A50D0198B5B1600A5A180 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +138,11 @@
 		D58A50E2198B5B1600A5A180 /* LibMate */ = {
 			isa = PBXGroup;
 			children = (
+				763B83D4198B66AA00F61FEC /* Windows */,
+				763B83D0198B667400F61FEC /* References */,
 				D58A50EB198B5B1600A5A180 /* AppDelegate.h */,
 				D58A50EC198B5B1600A5A180 /* AppDelegate.m */,
 				D58A50EE198B5B1600A5A180 /* Main.storyboard */,
-				D58A50F1198B5B1600A5A180 /* ViewController.h */,
-				D58A50F2198B5B1600A5A180 /* ViewController.m */,
 				D58A50F4198B5B1600A5A180 /* Images.xcassets */,
 				D58A50E3198B5B1600A5A180 /* Supporting Files */,
 			);
@@ -250,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58A50F3198B5B1600A5A180 /* ViewController.m in Sources */,
+				763B83D7198B673000F61FEC /* StatusInformation.m in Sources */,
+				763B83D3198B669900F61FEC /* UserInformation.m in Sources */,
 				D58A50ED198B5B1600A5A180 /* AppDelegate.m in Sources */,
 				D58A50E9198B5B1600A5A180 /* main.m in Sources */,
 			);
@@ -456,6 +484,7 @@
 				D58A510D198B5B1600A5A180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D58A510E198B5B1600A5A180 /* Build configuration list for PBXNativeTarget "LibMateTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +493,7 @@
 				D58A5110198B5B1600A5A180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
