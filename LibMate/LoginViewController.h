@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <FBLoginViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *UserNameText;
 @property (strong, nonatomic) AppDelegate *appDelegate;
+
+
 
 @end
