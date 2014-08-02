@@ -13,9 +13,5 @@
 UITableViewDelegate>
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
-@property (strong,nonatomic) ClientManager *clientManager;
 @property (weak, nonatomic) IBOutlet UITableView *MateTable;
-
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 @end

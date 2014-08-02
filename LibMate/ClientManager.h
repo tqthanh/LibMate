@@ -30,7 +30,8 @@
 @interface ClientManager : NSObject
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
-@property (strong, nonatomic) NSMutableSet *delivered;
+@property (strong, nonatomic) NSMutableDictionary *delivered;
+@property (strong,nonatomic) NSMutableArray*listStatus;
 @property (weak, nonatomic) id<ClientManagerMessageDelegate> delegateMessage;
 @property (weak, nonatomic) id<ClientManagerStatusDelegate> delegateStatus;
 

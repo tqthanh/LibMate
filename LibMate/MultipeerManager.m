@@ -25,10 +25,54 @@
         _advertiser = nil;
 		
 		_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        
 	}
 	
 	return self;
 }
+
+-(void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress{
+    
+    NSDictionary *dict = @{@"resourceName"  :   resourceName,
+                           @"peerID"        :   peerID,
+                           @"progress"      :   progress
+                           };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LibMate_MCDidStartReceivingResourceNotification"
+                                                        object:nil
+                                                      userInfo:dict];
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [progress addObserver:self
+                   forKeyPath:@"fractionCompleted"
+                      options:NSKeyValueObservingOptionNew
+                      context:nil];
+    });
+}
+
+- (void)session:(MCSession *)session didReceiveCertificate:(NSArray *)certificate fromPeer:(MCPeerID *)peerID certificateHandler:(void (^)(BOOL))certificateHandler {
+    return certificateHandler(YES);
+}
+
+-(void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error{
+    
+    NSDictionary *dict = @{@"resourceName"  :   resourceName,
+                           @"peerID"        :   peerID,
+                           @"localURL"      :   localURL
+                           };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LibMate_didFinishReceivingResourceNotification"
+                                                        object:nil
+                                                      userInfo:dict];
+    
+}
+
+
+-(void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID{
+    
+}
+
 
 - (void)setupPeerAndSessionWithDisplayName:(NSString *)displayName {
 	_peerID = [[MCPeerID alloc] initWithDisplayName:displayName];

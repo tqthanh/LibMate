@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AppDelegate.h"
+
 @interface TagSelectViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *Description;
@@ -15,9 +17,14 @@
 @property (strong, nonatomic) NSArray *tagArray;
 @property (weak, nonatomic) IBOutlet UINavigationBar *NavBar;
 @property (strong, nonatomic) NSString *tag;
+@property (strong, nonatomic) AppDelegate *appDelegate;
+
+
 - (IBAction)UpdateStatus:(id)sender;
 
 @end
+
+
 
 @protocol UIPickerViewDataSource
 @required

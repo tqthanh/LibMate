@@ -30,16 +30,19 @@
     // Do any additional setup after loading the view.
 	
 	_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-	[_appDelegate.multipeerManager setupPeerAndSessionWithDisplayName:_appDelegate.userInformation.userName];
-    [_appDelegate.multipeerManager setupMCBrowser];
-	[_appDelegate.multipeerManager advertiseSelf:defaultVisibility];
+//	[_appDelegate.multipeerManager setupPeerAndSessionWithDisplayName:_appDelegate.userInformation.userName];
+//    [_appDelegate.multipeerManager setupMCBrowser];
+//	[_appDelegate.multipeerManager advertiseSelf:defaultVisibility];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(peerDidChangeStateNotification:) name:@"LibMate_MCDidChangeStateNotification" object:nil];
 	
-	_arrConnectedDevices = [[NSMutableArray alloc] init];
+	_arrConnectedDevices = [[NSMutableArray alloc] initWithArray:_appDelegate.multipeerManager.session.connectedPeers];
+    
+    NSLog(@"Connected Peers: %u", _arrConnectedDevices.count);
 	
 	[_tblConnectedDevices setDelegate:self];
 	[_tblConnectedDevices setDataSource:self];
+    [_tblConnectedDevices reloadData];
     
     _lblDeviceName.text = _appDelegate.userInformation.userName;
 }
@@ -96,6 +99,8 @@
 		BOOL peerExist = ([_appDelegate.multipeerManager.session.connectedPeers count] > 0);
 		[_btnDisconnect setEnabled:peerExist];
 	}
+    
+    NSLog(@"Connected Peers: %u", _appDelegate.multipeerManager.session.connectedPeers.count);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

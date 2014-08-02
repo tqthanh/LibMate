@@ -7,7 +7,7 @@
 //
 
 #import "FindMateViewController.h"
-
+#import "StatusCellController.h"
 @interface FindMateViewController ()
 
 @end
@@ -20,16 +20,7 @@ NSMutableArray* statusData;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        statusData = [[NSMutableArray alloc] init];
-        
-        // Mock data
-        for (int i = 0; i < 5; ++i)
-        {
-            StatusInformation* tmp = [[StatusInformation alloc] initWithAuthor:@"author" image:NULL description: @"des" hashTags:NULL];
-            [statusData addObject:tmp];
-        }
-    }
+            }
     return self;
 }
 
@@ -38,13 +29,26 @@ NSMutableArray* statusData;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-	[_appDelegate.multipeerManager setupPeerAndSessionWithDisplayName:_appDelegate.userInformation.userName];
-    [_appDelegate.multipeerManager setupMCBrowser];
-	
+    [_appDelegate.clientManager setDelegateStatus:self];
     
-    [self.clientManager setDelegateStatus:self];
+    statusData = [NSMutableArray array];
+    
+//    {
+//        // Custom initialization
+//        statusData = [[NSMutableArray alloc] init];
+//        
+//        // Mock data
+//        for (int i = 0; i < 5; ++i)
+//        {
+//            StatusInformation* tmp = [[StatusInformation alloc] initWithAuthor:@"author" image:NULL description: @"des" hashTags:NULL];
+//            [statusData addObject:tmp];
+//        }
+//
+//    }
+    
     [_MateTable setDelegate:self];
     [_MateTable setDataSource:self];
+    [_MateTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,19 +76,30 @@ NSMutableArray* statusData;
 //}
 - (void)didReceiveStatus:(StatusInformation *)status {
     UITableViewCell * cell = [[UITableViewCell alloc]init];
-
+    NSLog(@"Receive status: %@", status.description);
     //cell = tableView
     [statusData addObject:status];
+    [_MateTable reloadData];
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
+(NSIndexPath *)indexPath{
+	StatusCellController *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier"];
 	
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellIdentifer"];
+		cell = [[StatusCellController alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellIdentifer"];
 	}
 	StatusInformation* status = [statusData objectAtIndex:[indexPath row]];
-	[[cell textLabel] setText:status.author];
-    
+	//[[cell textLabel] setText:status.description];
+    //NSLog(@"..Receive status: %@", status.description);
+    [[cell userLabel] setText:status.author];
+    [[cell descLable] setText:status.description];
+    [[cell tagLabel] setText:status.hashTags[0]];
 	return cell;
 }
 

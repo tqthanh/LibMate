@@ -10,6 +10,15 @@
 
 @implementation SendingInformation
 
+- (BOOL)isEqual:(id)object {
+    SendingInformation *myObject = (SendingInformation *)object;
+    return [myObject.dataName isEqual:_dataName] && [myObject.data isEqual:_data];
+}
+
+- (NSUInteger)hash {
+    return _dataName.hash + _data.hash;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
 	if (self = [super init]) {
 		self.dataName = [aDecoder decodeObjectForKey:@"dataName"];
@@ -19,7 +28,7 @@
 }
 
 - (id)initWithMessage:(MessageInformation *)message {
-	if (self == [super init]) {
+	if (self = [super init]) {
 		self.dataName = @"MESSAGE";
 		self.data = [NSKeyedArchiver archivedDataWithRootObject:message];
 	}
@@ -27,7 +36,7 @@
 }
 
 - (id)initWithStatus:(StatusInformation *)status {
-	if (self == [super init]) {
+	if (self = [super init]) {
 		self.dataName = @"STATUS";
 		self.data = [NSKeyedArchiver archivedDataWithRootObject:status];
 	}

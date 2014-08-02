@@ -20,7 +20,7 @@
 
 	// Do any additional setup after loading the view, typically from a nib.
 
-   // self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background_old.jpg"]];
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -29,22 +29,26 @@
         
         // Create a FBLoginView to log the user in with basic, email and friend list permissions
         // You should ALWAYS ask for basic permissions (public_profile) when logging the user in
-        FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email", @"user_friends"]];
-        
-        // Set this loginUIViewController to be the loginView button's delegate
-        loginView.delegate = self;
-        
-        // Align the button in the center horizontally
-        loginView.frame = CGRectOffset(loginView.frame,
-                                       (self.view.center.x - (loginView.frame.size.width / 2)),
-                                       5);
-        
-        // Align the button in the center vertically
-        loginView.center = self.view.center;
+//        FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"public_profile", @"email", @"user_friends"]];
+//        
+//        // Set this loginUIViewController to be the loginView button's delegate
+//        loginView.delegate = self;
+//        
+//        // Align the button in the center horizontally
+//        loginView.frame = CGRectOffset(loginView.frame,
+//                                       (self.view.center.x - (loginView.frame.size.width / 2)),
+//                                       5);
+//        
+//        // Align the button in the center vertically
+//        loginView.center = self.view.center;
         
         // Add the button to the view
-        [self.view addSubview:loginView];
+        //[self.view addSubview:loginView];
         
+        _appDelegate.userInformation.userName = @"A";
+        [_appDelegate.multipeerManager setupPeerAndSessionWithDisplayName:_appDelegate.userInformation.userName];
+        [_appDelegate.multipeerManager setupMCBrowser];
+        [_appDelegate.multipeerManager advertiseSelf:TRUE];
     }
 }
 

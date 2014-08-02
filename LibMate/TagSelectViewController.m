@@ -35,6 +35,8 @@
     //self.Description.delegate = self;
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xd35400)];
     
+    _appDelegate = [[UIApplication sharedApplication] delegate];
+    NSLog(@"Connected Peers: %lu\n", [_appDelegate.multipeerManager.session.connectedPeers count]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,7 +107,9 @@
 
 
 - (IBAction)UpdateStatus:(id)sender {
-    self.description = self.Description.text;
-    
+   
+    StatusInformation *status = [[StatusInformation alloc] initWithAuthor:_appDelegate.userInformation.userName image:_appDelegate.userInformation.userAvatar description:self.Description.text hashTags:[[NSMutableArray alloc] initWithObjects:self.tag, nil]];
+//    NSLog(@"Connected Peers: %u", [_appDelegate.multipeerManager.session.connectedPeers count]);
+    [_appDelegate.clientManager postStatus:(status)];
 }
 @end

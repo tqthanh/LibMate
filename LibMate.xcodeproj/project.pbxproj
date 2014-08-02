@@ -12,6 +12,11 @@
 		763B83D3198B669900F61FEC /* UserInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D2198B669900F61FEC /* UserInformation.m */; };
 		763B83D7198B673000F61FEC /* StatusInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D6198B673000F61FEC /* StatusInformation.m */; };
 		763B83DA198B6A5700F61FEC /* MultipeerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D9198B6A5700F61FEC /* MultipeerManager.m */; };
+		D54FE649198CB26200FB6D62 /* backgroundview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D54FE647198CB26200FB6D62 /* backgroundview.jpg */; };
+		D54FE64A198CB26200FB6D62 /* backgroundpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D54FE648198CB26200FB6D62 /* backgroundpaper.jpg */; };
+		D54FE64C198CB30500FB6D62 /* background_old.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D54FE64B198CB30500FB6D62 /* background_old.jpg */; };
+		D54FE64F198CC7CB00FB6D62 /* StatusCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54FE64E198CC7CB00FB6D62 /* StatusCellController.m */; };
+		D54FE652198CCDA300FB6D62 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54FE651198CCDA300FB6D62 /* MessageViewController.m */; };
 		D58A50DD198B5B1600A5A180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50DC198B5B1600A5A180 /* Foundation.framework */; };
 		D58A50DF198B5B1600A5A180 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */; };
 		D58A50E1198B5B1600A5A180 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50E0198B5B1600A5A180 /* UIKit.framework */; };
@@ -55,6 +60,13 @@
 		763B83D6198B673000F61FEC /* StatusInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusInformation.m; sourceTree = "<group>"; };
 		763B83D8198B6A5700F61FEC /* MultipeerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerManager.h; sourceTree = "<group>"; };
 		763B83D9198B6A5700F61FEC /* MultipeerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerManager.m; sourceTree = "<group>"; };
+		D54FE647198CB26200FB6D62 /* backgroundview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundview.jpg; sourceTree = "<group>"; };
+		D54FE648198CB26200FB6D62 /* backgroundpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundpaper.jpg; sourceTree = "<group>"; };
+		D54FE64B198CB30500FB6D62 /* background_old.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_old.jpg; sourceTree = "<group>"; };
+		D54FE64D198CC7CB00FB6D62 /* StatusCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCellController.h; sourceTree = "<group>"; };
+		D54FE64E198CC7CB00FB6D62 /* StatusCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCellController.m; sourceTree = "<group>"; };
+		D54FE650198CCDA300FB6D62 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		D54FE651198CCDA300FB6D62 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		D58A50D9198B5B1600A5A180 /* LibMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A50DC198B5B1600A5A180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,6 +160,10 @@
 				D5D7AB96198BBF2100F25819 /* ConnectionsViewController.m */,
 				D59E18C8198C625B00247027 /* FindMateViewController.h */,
 				D59E18C9198C625B00247027 /* FindMateViewController.m */,
+				D54FE64D198CC7CB00FB6D62 /* StatusCellController.h */,
+				D54FE64E198CC7CB00FB6D62 /* StatusCellController.m */,
+				D54FE650198CCDA300FB6D62 /* MessageViewController.h */,
+				D54FE651198CCDA300FB6D62 /* MessageViewController.m */,
 			);
 			name = Windows;
 			sourceTree = "<group>";
@@ -230,6 +246,9 @@
 		D5D7AB84198B947B00F25819 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D54FE647198CB26200FB6D62 /* backgroundview.jpg */,
+				D54FE64B198CB30500FB6D62 /* background_old.jpg */,
+				D54FE648198CB26200FB6D62 /* backgroundpaper.jpg */,
 				7633EF65198C7A4100AD11D2 /* next_button.png */,
 				D5D7AB87198BA18E00F25819 /* background.jpg */,
 			);
@@ -313,10 +332,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7633EF66198C7A4100AD11D2 /* next_button.png in Resources */,
+				D54FE64A198CB26200FB6D62 /* backgroundpaper.jpg in Resources */,
 				D58A50F5198B5B1600A5A180 /* Images.xcassets in Resources */,
 				D5D7AB88198BA18E00F25819 /* background.jpg in Resources */,
 				D58A50E7198B5B1600A5A180 /* InfoPlist.strings in Resources */,
+				D54FE649198CB26200FB6D62 /* backgroundview.jpg in Resources */,
 				D58A50F0198B5B1600A5A180 /* Main.storyboard in Resources */,
+				D54FE64C198CB30500FB6D62 /* background_old.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,9 +363,11 @@
 				D58A50F3198B5B1600A5A180 /* LoginViewController.m in Sources */,
 				D5D7AB94198BBF1700F25819 /* ClientManager.m in Sources */,
 				D5D7AB9A198BBF2F00F25819 /* MessageInformation.m in Sources */,
+				D54FE652198CCDA300FB6D62 /* MessageViewController.m in Sources */,
 				763B83D7198B673000F61FEC /* StatusInformation.m in Sources */,
 				763B83D3198B669900F61FEC /* UserInformation.m in Sources */,
 				763B83DA198B6A5700F61FEC /* MultipeerManager.m in Sources */,
+				D54FE64F198CC7CB00FB6D62 /* StatusCellController.m in Sources */,
 				D58A50ED198B5B1600A5A180 /* AppDelegate.m in Sources */,
 				D5D7AB80198B8D0500F25819 /* TagSelectViewController.m in Sources */,
 				D58A50E9198B5B1600A5A180 /* main.m in Sources */,
