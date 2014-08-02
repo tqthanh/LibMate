@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-#import "AppDelegate.h"
 #import "SendingInformation.h"
 #import "MessageInformation.h"
 #import "StatusInformation.h"
@@ -25,6 +25,8 @@
 
 @end
 
+@class AppDelegate;
+
 @interface ClientManager : NSObject
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
@@ -36,5 +38,7 @@
 - (void)sendInformation:(SendingInformation *)information receivers:(NSArray *)receivers;
 - (void)sendMessage:(MessageInformation *)message;
 - (void)postStatus:(StatusInformation *)status;
+- (void)transferAllStatus:(MCPeerID *)peerID;
+- (void)transferStatus:(StatusInformation *)status peer:(MCPeerID *)peerID;
 
 @end

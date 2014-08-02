@@ -16,7 +16,9 @@
     
     _multipeerManager = [[MultipeerManager alloc] init];
     _userInformation = [[UserInformation alloc] init];
-        [FBProfilePictureView class];
+	_clientManager = [[ClientManager alloc] init];
+	
+	[FBProfilePictureView class];
     return YES;
 }
 - (BOOL)application:(UIApplication *)application

@@ -7,6 +7,7 @@
 //
 
 #import "ClientManager.h"
+#import "AppDelegate.h"
 
 @implementation ClientManager
 
@@ -59,6 +60,11 @@
 	[_appDelegate.multipeerManager.session sendData:sendingData toPeers:receivers withMode:MCSessionSendDataReliable error:&error];
 }
 
+- (void)transferAllStatus:(MCPeerID *)peerID {
+	for (int i = 0, n = _listStatus.count; i < n; i++)
+		[self transferStatus:[_listStatus objectAtIndex:i]  peer:peerID];
+}
+
 - (void)sendMessage:(MessageInformation *)message {
 	SendingInformation *sendingInformation;
 	sendingInformation = [sendingInformation initWithMessage:message];
@@ -71,6 +77,15 @@
 	sendingInformation = [sendingInformation initWithStatus:status];
 	
 	[self sendInformation:sendingInformation receivers:_appDelegate.multipeerManager.session.connectedPeers];
+}
+
+-(void)transferStatus:(StatusInformation *)status peer:(MCPeerID *)peerID {
+	SendingInformation *sendingInformation;
+	sendingInformation = [sendingInformation initWithStatus:status];
+	
+	NSArray *peers = [[NSArray alloc] initWithObjects:peerID, nil];
+	
+	[self sendInformation:sendingInformation receivers:peers];
 }
 
 @end
