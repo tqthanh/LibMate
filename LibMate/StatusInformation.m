@@ -47,4 +47,19 @@
 	[aCoder encodeObject:self.hashTags forKey:@"hashTags"];
 }
 
+- (NSInteger)countMatchTags:(StatusInformation *)aInformation {
+	NSMutableSet *myTags = [[NSMutableSet alloc] initWithArray:_hashTags];
+	NSSet *aTags = [[NSSet alloc] initWithArray:aInformation.hashTags];
+	[myTags intersectSet:aTags];
+	
+	return myTags.count;
+}
+
+- (NSArray *)getSortedMatchTags:(NSArray *)aInformations {
+	NSArray *result = [aInformations sortedArrayUsingComparator:^NSComparisonResult(StatusInformation *a, StatusInformation *b) {
+		return [self countMatchTags:a] > [self countMatchTags:b];
+	} ];
+	return result;
+}
+
 @end

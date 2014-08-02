@@ -16,5 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *hashTags;
 
 - (id) initWithAuthor:(NSString *)author image:(UIImage *)image description:(NSString *)description hashTags:(NSMutableArray *)hashTags;
+- (NSInteger) countMatchTags:(StatusInformation *)aInformation;
+- (NSArray *) getSortedMatchTags:(NSArray *)aInformations;
 
 @end

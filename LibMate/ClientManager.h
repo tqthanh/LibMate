@@ -7,28 +7,39 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-#import "AppDelegate.h"
 #import "SendingInformation.h"
 #import "MessageInformation.h"
 #import "StatusInformation.h"
 
-@protocol ClientManagerDelegate <NSObject>
+@protocol ClientManagerMessageDelegate <NSObject>
 
 - (void)didReceiveMessage:(MessageInformation *)message;
+
+@end
+
+@protocol ClientManagerStatusDelegate <NSObject>
+
 - (void)didReceiveStatus:(StatusInformation *)status;
 
 @end
+
+@class AppDelegate;
 
 @interface ClientManager : NSObject
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSMutableSet *delivered;
-@property (weak, nonatomic) id<ClientManagerDelegate> delegate;
+@property (strong, nonatomic) NSMutableArray *listStatus;
+@property (weak, nonatomic) id<ClientManagerMessageDelegate> delegateMessage;
+@property (weak, nonatomic) id<ClientManagerStatusDelegate> delegateStatus;
 
 - (void)didReceiveDataWithNotification:(NSNotification *)notification;
 - (void)sendInformation:(SendingInformation *)information receivers:(NSArray *)receivers;
 - (void)sendMessage:(MessageInformation *)message;
 - (void)postStatus:(StatusInformation *)status;
+- (void)transferAllStatus:(MCPeerID *)peerID;
+- (void)transferStatus:(StatusInformation *)status peer:(MCPeerID *)peerID;
 
 @end

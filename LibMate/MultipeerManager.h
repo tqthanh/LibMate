@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
+@class AppDelegate;
+
 @interface MultipeerManager : NSObject <MCSessionDelegate>
 
 @property (strong, nonatomic) MCPeerID *peerID;
 @property (strong, nonatomic) MCSession *session;
 @property (strong, nonatomic) MCBrowserViewController *browser;
 @property (strong, nonatomic) MCAdvertiserAssistant *advertiser;
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 - (void)setupPeerAndSessionWithDisplayName:(NSString *)displayName;
 - (void)setupMCBrowser;

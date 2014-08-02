@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7633EF64198C79ED00AD11D2 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7633EF63198C79ED00AD11D2 /* FacebookSDK.framework */; };
+		7633EF66198C7A4100AD11D2 /* next_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7633EF65198C7A4100AD11D2 /* next_button.png */; };
 		763B83D3198B669900F61FEC /* UserInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D2198B669900F61FEC /* UserInformation.m */; };
 		763B83D7198B673000F61FEC /* StatusInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D6198B673000F61FEC /* StatusInformation.m */; };
 		763B83DA198B6A5700F61FEC /* MultipeerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 763B83D9198B6A5700F61FEC /* MultipeerManager.m */; };
-		D54EFC03198BD8D400D932F2 /* nextbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = D54EFC02198BD8D400D932F2 /* nextbutton.png */; };
 		D58A50DD198B5B1600A5A180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50DC198B5B1600A5A180 /* Foundation.framework */; };
 		D58A50DF198B5B1600A5A180 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */; };
 		D58A50E1198B5B1600A5A180 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50E0198B5B1600A5A180 /* UIKit.framework */; };
@@ -28,7 +29,6 @@
 		D5D7AB80198B8D0500F25819 /* TagSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB7F198B8D0500F25819 /* TagSelectViewController.m */; };
 		D5D7AB83198B8E7000F25819 /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB82198B8E7000F25819 /* MainTabBar.m */; };
 		D5D7AB88198BA18E00F25819 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AB87198BA18E00F25819 /* background.jpg */; };
-		D5D7AB91198BB36900F25819 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D7AB90198BB36900F25819 /* FacebookSDK.framework */; };
 		D5D7AB94198BBF1700F25819 /* ClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB93198BBF1700F25819 /* ClientManager.m */; };
 		D5D7AB97198BBF2100F25819 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB96198BBF2100F25819 /* ConnectionsViewController.m */; };
 		D5D7AB9A198BBF2F00F25819 /* MessageInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB99198BBF2F00F25819 /* MessageInformation.m */; };
@@ -46,13 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7633EF63198C79ED00AD11D2 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		7633EF65198C7A4100AD11D2 /* next_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_button.png; sourceTree = "<group>"; };
 		763B83D1198B669900F61FEC /* UserInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformation.h; sourceTree = "<group>"; };
 		763B83D2198B669900F61FEC /* UserInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformation.m; sourceTree = "<group>"; };
 		763B83D5198B673000F61FEC /* StatusInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusInformation.h; sourceTree = "<group>"; };
 		763B83D6198B673000F61FEC /* StatusInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusInformation.m; sourceTree = "<group>"; };
 		763B83D8198B6A5700F61FEC /* MultipeerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipeerManager.h; sourceTree = "<group>"; };
 		763B83D9198B6A5700F61FEC /* MultipeerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipeerManager.m; sourceTree = "<group>"; };
-		D54EFC02198BD8D400D932F2 /* nextbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nextbutton.png; path = ../../../../Desktop/nextbutton.png; sourceTree = "<group>"; };
 		D58A50D9198B5B1600A5A180 /* LibMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58A50DC198B5B1600A5A180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,7 +78,6 @@
 		D5D7AB81198B8E7000F25819 /* MainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
 		D5D7AB82198B8E7000F25819 /* MainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBar.m; sourceTree = "<group>"; };
 		D5D7AB87198BA18E00F25819 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		D5D7AB90198BB36900F25819 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D5D7AB92198BBF1700F25819 /* ClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientManager.h; sourceTree = "<group>"; };
 		D5D7AB93198BBF1700F25819 /* ClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientManager.m; sourceTree = "<group>"; };
 		D5D7AB95198BBF2100F25819 /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58A50DF198B5B1600A5A180 /* CoreGraphics.framework in Frameworks */,
-				D5D7AB91198BB36900F25819 /* FacebookSDK.framework in Frameworks */,
+				7633EF64198C79ED00AD11D2 /* FacebookSDK.framework in Frameworks */,
 				D58A50E1198B5B1600A5A180 /* UIKit.framework in Frameworks */,
 				D58A50DD198B5B1600A5A180 /* Foundation.framework in Frameworks */,
 			);
@@ -169,7 +169,7 @@
 		D58A50DB198B5B1600A5A180 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5D7AB90198BB36900F25819 /* FacebookSDK.framework */,
+				7633EF63198C79ED00AD11D2 /* FacebookSDK.framework */,
 				D58A50DC198B5B1600A5A180 /* Foundation.framework */,
 				D58A50DE198B5B1600A5A180 /* CoreGraphics.framework */,
 				D58A50E0198B5B1600A5A180 /* UIKit.framework */,
@@ -225,7 +225,7 @@
 		D5D7AB84198B947B00F25819 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D54EFC02198BD8D400D932F2 /* nextbutton.png */,
+				7633EF65198C7A4100AD11D2 /* next_button.png */,
 				D5D7AB87198BA18E00F25819 /* background.jpg */,
 			);
 			name = Resources;
@@ -307,9 +307,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7633EF66198C7A4100AD11D2 /* next_button.png in Resources */,
 				D58A50F5198B5B1600A5A180 /* Images.xcassets in Resources */,
 				D5D7AB88198BA18E00F25819 /* background.jpg in Resources */,
-				D54EFC03198BD8D400D932F2 /* nextbutton.png in Resources */,
 				D58A50E7198B5B1600A5A180 /* InfoPlist.strings in Resources */,
 				D58A50F0198B5B1600A5A180 /* Main.storyboard in Resources */,
 			);
@@ -472,6 +472,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/tinphatapple/Documents/FacebookSDK,
+					/Users/Tmbao/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LibMate/LibMate-Prefix.pch";
@@ -496,6 +497,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/tinphatapple/Documents/FacebookSDK,
+					/Users/Tmbao/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LibMate/LibMate-Prefix.pch";

@@ -7,6 +7,7 @@
 //
 
 #import "MultipeerManager.h"
+#import "AppDelegate.h"
 
 @implementation MultipeerManager
 
@@ -22,6 +23,8 @@
         _session = nil;
         _browser = nil;
         _advertiser = nil;
+		
+		_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	}
 	
 	return self;
@@ -54,6 +57,10 @@
 						   @"state": [NSNumber numberWithInt:state]};
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"LibMate_MCDidChangeStateNotification" object:nil userInfo:dict];
+	
+	if (state == MCSessionStateConnected) {
+		[_appDelegate.clientManager transferAllStatus:peerID];
+	}
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID {

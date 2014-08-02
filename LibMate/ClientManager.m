@@ -7,6 +7,7 @@
 //
 
 #import "ClientManager.h"
+#import "AppDelegate.h"
 
 @implementation ClientManager
 
@@ -15,7 +16,8 @@
 	
 	if (self) {
 		_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-		_delegate = nil;
+		_delegateMessage = nil;
+		_delegateStatus = nil;
 		_delivered = [[NSMutableSet alloc] init];
 	}
 	
@@ -28,7 +30,7 @@
 	
 	if ([receiveInformation.dataName isEqual:@"MESSAGE"]) {
 		MessageInformation *message = [NSKeyedUnarchiver unarchiveObjectWithData:receiveInformation.data];
-		[_delegate didReceiveMessage:message];
+		[_delegateMessage didReceiveMessage:message];
 		
 		//
 		NSMutableSet *myPeers = [NSMutableSet setWithArray:_appDelegate.multipeerManager.session.connectedPeers];
@@ -39,7 +41,9 @@
 	}
 	else {
 		StatusInformation *status = [NSKeyedUnarchiver unarchiveObjectWithData:receiveInformation.data];
-		[_delegate didReceiveStatus:status];
+		[_delegateStatus didReceiveStatus:status];
+		
+		[_listStatus addObject:status];
 		
 		[self sendInformation:receiveInformation receivers:_appDelegate.multipeerManager.session.connectedPeers];
 	}
@@ -58,6 +62,11 @@
 	[_appDelegate.multipeerManager.session sendData:sendingData toPeers:receivers withMode:MCSessionSendDataReliable error:&error];
 }
 
+- (void)transferAllStatus:(MCPeerID *)peerID {
+	for (int i = 0, n = _listStatus.count; i < n; i++)
+		[self transferStatus:[_listStatus objectAtIndex:i]  peer:peerID];
+}
+
 - (void)sendMessage:(MessageInformation *)message {
 	SendingInformation *sendingInformation;
 	sendingInformation = [sendingInformation initWithMessage:message];
@@ -70,6 +79,15 @@
 	sendingInformation = [sendingInformation initWithStatus:status];
 	
 	[self sendInformation:sendingInformation receivers:_appDelegate.multipeerManager.session.connectedPeers];
+}
+
+-(void)transferStatus:(StatusInformation *)status peer:(MCPeerID *)peerID {
+	SendingInformation *sendingInformation;
+	sendingInformation = [sendingInformation initWithStatus:status];
+	
+	NSArray *peers = [[NSArray alloc] initWithObjects:peerID, nil];
+	
+	[self sendInformation:sendingInformation receivers:peers];
 }
 
 @end
