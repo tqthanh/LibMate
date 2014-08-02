@@ -25,6 +25,7 @@
 		D58A50FE198B5B1600A5A180 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58A50E0198B5B1600A5A180 /* UIKit.framework */; };
 		D58A5106198B5B1600A5A180 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D58A5104198B5B1600A5A180 /* InfoPlist.strings */; };
 		D58A5108198B5B1600A5A180 /* LibMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D58A5107198B5B1600A5A180 /* LibMateTests.m */; };
+		D59E18CA198C625B00247027 /* FindMateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59E18C9198C625B00247027 /* FindMateViewController.m */; };
 		D5D7AB80198B8D0500F25819 /* TagSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB7F198B8D0500F25819 /* TagSelectViewController.m */; };
 		D5D7AB83198B8E7000F25819 /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7AB82198B8E7000F25819 /* MainTabBar.m */; };
 		D5D7AB88198BA18E00F25819 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5D7AB87198BA18E00F25819 /* background.jpg */; };
@@ -72,6 +73,8 @@
 		D58A5103198B5B1600A5A180 /* LibMateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LibMateTests-Info.plist"; sourceTree = "<group>"; };
 		D58A5105198B5B1600A5A180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D58A5107198B5B1600A5A180 /* LibMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibMateTests.m; sourceTree = "<group>"; };
+		D59E18C8198C625B00247027 /* FindMateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindMateViewController.h; sourceTree = "<group>"; };
+		D59E18C9198C625B00247027 /* FindMateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindMateViewController.m; sourceTree = "<group>"; };
 		D5D7AB7E198B8D0500F25819 /* TagSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagSelectViewController.h; sourceTree = "<group>"; };
 		D5D7AB7F198B8D0500F25819 /* TagSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagSelectViewController.m; sourceTree = "<group>"; };
 		D5D7AB81198B8E7000F25819 /* MainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				D58A50F2198B5B1600A5A180 /* LoginViewController.m */,
 				D5D7AB95198BBF2100F25819 /* ConnectionsViewController.h */,
 				D5D7AB96198BBF2100F25819 /* ConnectionsViewController.m */,
+				D59E18C8198C625B00247027 /* FindMateViewController.h */,
+				D59E18C9198C625B00247027 /* FindMateViewController.m */,
 			);
 			name = Windows;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				D58A50ED198B5B1600A5A180 /* AppDelegate.m in Sources */,
 				D5D7AB80198B8D0500F25819 /* TagSelectViewController.m in Sources */,
 				D58A50E9198B5B1600A5A180 /* main.m in Sources */,
+				D59E18CA198C625B00247027 /* FindMateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

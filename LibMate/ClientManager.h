@@ -13,9 +13,14 @@
 #import "MessageInformation.h"
 #import "StatusInformation.h"
 
-@protocol ClientManagerDelegate <NSObject>
+@protocol ClientManagerMessageDelegate <NSObject>
 
 - (void)didReceiveMessage:(MessageInformation *)message;
+
+@end
+
+@protocol ClientManagerStatusDelegate <NSObject>
+
 - (void)didReceiveStatus:(StatusInformation *)status;
 
 @end
@@ -24,7 +29,8 @@
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSMutableSet *delivered;
-@property (weak, nonatomic) id<ClientManagerDelegate> delegate;
+@property (weak, nonatomic) id<ClientManagerMessageDelegate> delegateMessage;
+@property (weak, nonatomic) id<ClientManagerStatusDelegate> delegateStatus;
 
 - (void)didReceiveDataWithNotification:(NSNotification *)notification;
 - (void)sendInformation:(SendingInformation *)information receivers:(NSArray *)receivers;

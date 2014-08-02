@@ -15,7 +15,8 @@
 	
 	if (self) {
 		_appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-		_delegate = nil;
+        _delegateMessage = nil;
+        _delegateStatus = nil;
 		_delivered = [[NSMutableSet alloc] init];
 	}
 	
@@ -28,7 +29,7 @@
 	
 	if ([receiveInformation.dataName isEqual:@"MESSAGE"]) {
 		MessageInformation *message = [NSKeyedUnarchiver unarchiveObjectWithData:receiveInformation.data];
-		[_delegate didReceiveMessage:message];
+		[_delegateMessage didReceiveMessage:message];
 		
 		//
 		NSMutableSet *myPeers = [NSMutableSet setWithArray:_appDelegate.multipeerManager.session.connectedPeers];
@@ -39,7 +40,7 @@
 	}
 	else {
 		StatusInformation *status = [NSKeyedUnarchiver unarchiveObjectWithData:receiveInformation.data];
-		[_delegate didReceiveStatus:status];
+		[_delegateStatus didReceiveStatus:status];
 		
 		[self sendInformation:receiveInformation receivers:_appDelegate.multipeerManager.session.connectedPeers];
 	}
